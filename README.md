@@ -1,28 +1,5 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Exchange important application code which shoudl not be published
-* Version
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+# Fake News Graph Core
+## Introduction
+This Repo is for internal uses. We can share code snippets and applicaition code 
+and other files here which should not be published (yet). 
+We should also start using the Wiki to create a documentation of what we're doing
