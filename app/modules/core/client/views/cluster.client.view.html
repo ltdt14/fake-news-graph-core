@@ -1,0 +1,200 @@
+
+<div ng-controller="ClusterController">
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-sm-4">
+    <h2>Prometheus Cluster</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li class="active">
+        <strong>Cluster</strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-sm-8">
+    <div class="title-action">
+      <a href="" class="btn btn-primary">Edit Cluster</a>
+    </div>
+  </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="ibox">
+        <div class="ibox-content">
+          <h5>Slaves</h5>
+          <h2>{{metrics.slaves.percentage | number:2}}%</h2>
+          <div class="progress progress-mini">
+            <div style="width: {{metrics.slaves.percentage}}%;" class="progress-bar"></div>
+          </div>
+
+          <div class="m-t-sm small">{{metrics.slaves.active | number:0}} / <strong>{{metrics.slaves.registrations | number:0}} slaves</strong> active.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="ibox">
+        <div class="ibox-content">
+          <h5>CPU</h5>
+          <h2>{{metrics.cpu.percentage | number:2}}%</h2>
+          <div class="progress progress-mini">
+            <div style="width: {{metrics.cpu.percentage}}%;" class="progress-bar"></div>
+          </div>
+
+          <div class="m-t-sm small">{{metrics.cpu.used | number:0}} / <strong>{{metrics.cpu.total | number:0}} Cores</strong> used.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="ibox">
+        <div class="ibox-content">
+          <h5>Memory</h5>
+          <h2>{{metrics.memory.percentage | number:2}}%</h2>
+          <div class="progress progress-mini">
+            <div style="width: {{metrics.memory.percentage}}%;" class="progress-bar"></div>
+          </div>
+
+          <div class="m-t-sm small">{{metrics.memory.used | number:0}} / <strong>{{metrics.memory.total | number:0}} GB</strong> used.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="ibox">
+        <div class="ibox-content">
+          <h5>Disk</h5>
+          <h2>{{metrics.disk.percentage | number:2}}%</h2>
+          <div class="progress progress-mini">
+            <div style="width: {{metrics.disk.percentage}}%;" class="progress-bar"></div>
+          </div>
+
+          <div class="m-t-sm small">{{metrics.disk.used | number:0}} / <strong>{{metrics.disk.total | number:0}} GB</strong> used.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div>
+        <h4>Tasks</h4>
+        <table class="table">
+          <tbody>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-info m-r-sm">{{metrics.tasks.staging}}</button>
+              Staging
+            </td>
+            <td>
+              <button type="button" class="btn btn-success m-r-sm">{{metrics.tasks.running}}</button>
+              Running
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger m-r-sm">{{metrics.tasks.killed}}</button>
+              Killed
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-info m-r-sm">{{metrics.tasks.starting}}</button>
+              Starting
+            </td>
+            <td>
+              <button type="button" class="btn btn-success m-r-sm">{{metrics.tasks.finished}}</button>
+              Finished
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger m-r-sm">{{metrics.tasks.failed}}</button>
+              Failed
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="widget style1 lazur-bg">
+        <div class="row">
+          <div class="col-xs-4">
+            <i class="fa fa-cubes fa-5x"></i>
+          </div>
+          <div class="col-xs-8 text-right">
+            <span> Pixelpark </span>
+            <h2 class="font-bold">{{metrics.slaves.pixelpark | number:0}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="widget style1 yellow-bg">
+        <div class="row">
+          <div class="col-xs-4">
+            <i class="fa fa-amazon fa-5x"></i>
+          </div>
+          <div class="col-xs-8 text-right">
+            <span> AWS </span>
+            <h2 class="font-bold">{{metrics.slaves.aws | number:0}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="widget style1 blue-bg">
+        <div class="row">
+          <div class="col-xs-4">
+            <i class="fa fa-google fa-5x"></i>
+          </div>
+          <div class="col-xs-8 text-right">
+            <span> GCE </span>
+            <h2 class="font-bold">{{metrics.slaves.gce | number:0}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Active Frameworks</h5>
+        </div>
+        <div class="ibox-content">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>Name </th>
+                <th>Host </th>
+                <th>User </th>
+                <th>Active Tasks </th>
+                <th>CPUs </th>
+                <th>Memory </th>
+                <th>Disk </th>
+                <th>Registered </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="framework in frameworks">
+                <td>{{framework.name}}</td>
+                <td>{{framework.hostname}}</td>
+                <td>{{framework.user}}</td>
+                <td>{{framework.tasks.length}}</td>
+                <td>{{framework.resources.cpus | number:2}}</td>
+                <td>{{framework.resources.mem / 1000 | number:2}} GB</td>
+                <td>{{framework.resources.disk | number:2}} B</td>
+                <td>{{framework.registered_time * 1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
