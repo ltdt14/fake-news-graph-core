@@ -3,3 +3,6 @@
 /app/.env
 /inspina_theme/node_modules/
 .idea/
+/app/dist/
+/app/public/build/
+/app/public/css/

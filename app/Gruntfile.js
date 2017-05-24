@@ -5,17 +5,27 @@ module.exports = function (grunt) {
     //load plugins
     [
         "grunt-contrib-less",
-        "grunt-contrib-uglify",
         "grunt-contrib-cssmin",
         "grunt-contrib-watch",
         "grunt-contrib-clean",
-        "grunt-hashres"
+        "grunt-hashres",
+        "grunt-babel"
     ].forEach(function(task){
         grunt.loadNpmTasks(task);
     });
 
     //configure plugins
     grunt.initConfig({
+        babel: {
+            options: {
+                presets: ["es2015", "es2016", "react", "stage-1"]
+            },
+            dist: {
+                files: {
+                    'dist/server/index.js': 'src/server/index.js'
+                }
+            }
+        },
         less: {
             development: {
                 options: {
@@ -28,27 +38,11 @@ module.exports = function (grunt) {
         },
         clean: {
             style: ["public/css/**/*.css"],
-            scripts: ["public/js/asy_website.min.js"]
-        },
-        uglify: {
-            options: {
-                mangle: false
-            },
-            all: {
-                files: {
-                    "public/js/asy_website.min.js": ["public/js/**/*.js"]
-                }
-            }
         },
         cssmin:{
-            combine:{
-                files:{
-                    "public/css/asy_website.css": ["public/css/**/*.css"]
-                }
-            },
             minify:{
-                src: "public/css/asy_website.css",
-                dest: "public/css/asy_website.min.css",
+                src: "public/css/stylesheet.css",
+                dest: "public/css/stylesheet.min.css",
             }
         },
         hashres: {
@@ -57,11 +51,10 @@ module.exports = function (grunt) {
             },
             all:{
                 src: [
-                    "public/js/app.min.js",
-                    "public/css/app.min.css",
+                    "public/css/stylesheet.min.css",
                 ],
                 dest: [
-                    "views/layouts/main.handlebars",
+                    "views/index.hbs",
                 ]
             },
         },
@@ -72,18 +65,10 @@ module.exports = function (grunt) {
                 options: {
                     livereload: true
                 }
-            },
-            scripts: {
-                files: ["public/js/**/*.js", "!public/js/asy_website.min.js"],
-                tasks: ["clean:scripts", "uglify"],
-                options: {
-                    livereload: true
-                }
             }
         }
     });
 
     //register tasks
-    grunt.registerTask("static-production", ["clean", "less", "cssmin", "uglify", "hashres"]);
-    grunt.registerTask('static-development', ['clean'])
+    grunt.registerTask("production", ["clean", "less", "cssmin", "hashres"]);
 };
