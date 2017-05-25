@@ -1,0 +1,28 @@
+{
+  "name": "d3_playground",
+  "version": "1.0.0",
+  "description": "## Install - run `npm install`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start index.js --name preview.fakenewsgraph.de --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-hashres": "^0.4.1",
+    "load-grunt-tasks": "^3.2.0"
+  }
+}

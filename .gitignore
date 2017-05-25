@@ -6,3 +6,5 @@
 /app/dist/
 /app/public/build/
 /app/public/css/
+/d3_playground/node_modules/
+/preview_page/node_modules/
