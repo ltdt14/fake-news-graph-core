@@ -14,13 +14,186 @@
     <meta property="og:site_name" content="Rock Blog"/>
     <link rel="canonical" href="">
     <base href="/">
-    <link type="text/css" rel="stylesheet" href="/css/stylesheet.css">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-
+    <!-- Set the page to the width of the device and set the zoon level -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>Fake News Graph</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
 
 </head>
+
 <body>
-    <h1>D3 Playground</h1>
-<script src="js/script.js"></script>
+
+<section id="section01" class="demo">
+
+    <div class="cont">
+        <div>
+            <div class="navbar navbar-static-top">
+                <img class="pull-left sth img-responsive" src="res/FakeNewsGraphLogo4.png">
+            </div>
+
+            <div class="row equal">
+                <div class="infopar col-lg-4  col-md-4 col-sm-6 col-xs-12">
+                    <div class="info col-lg-12">
+                        <h1> <img class="logos" src="res/insight1.png"> What is FakeNewsGraph </h1>
+                        <p>We would record the spreading of the news and would analyse this data to extract information about:
+                        <ul>
+                            <li>How fast a certain fake news story spreads over time</li>
+                            <li>The actors which took part in the spreading of the news</li>
+                            <li>Which actors had the most significant role in the spreading</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="infopar col-lg-4 = col-md-4 col-sm-6 col-xs-12">
+                    <div class="info col-lg-12">
+                        <h1> <img class="logos" src="res/plan-idea1.png"> Approach </h1>
+                        <p>Our first goal is to implement this system for Twitter as it is the most easily accessible social network. Then if our concept prooves successful, we would expand it for facebook. </p>
+
+                        <p>Due to the limitations of the Twitter REST API we had to use the Steaming API to access the data. Our approach consists of the following 3 steps:
+                        <ul>
+                            <li>Listen and record tweets of interest</li>
+                            <li>Filter and analyse those tweets</li>
+                            <li>Display the results in an interactive GUI</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="infopar col-lg-4 = col-md-4 col-sm-6 col-xs-12">
+                    <div class="info col-lg-12">
+                        <h1> <img class="logos" src="res/team1.png"> The Team </h1>
+                        <p> We are highly motivated students from Technical University of Berlin and Freie Universität Berlin, teamed up to tackle this multi-disziplinary project. Each one of us has experteese in different area of the computer science and together we are determined to complete our goal - to implement this web plattform.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="push"></div>
+
+    </div>
+
+    <a id="asd" href="#section02"><span></span>Example</a>
+
+
+</section>
+<section id="section02" class="demo">
+    <svg id='foo'></svg>
+    <a id="btn_1" href="#section01"><span></span>Back to top</a>
+</section>
+
+<footer>
+    <div id="rights">
+        &copy; All rights reserved 2017
+    </div>
+    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+</footer>
+
 </body>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+    var svg = d3.select("svg");
+
+    var positionInfo = document.getElementById('foo').getBoundingClientRect();
+    var height = positionInfo.height;
+    var width = positionInfo.width;
+
+    //used to capture drag position
+    var start_x, start_y;
+
+    //create some circles at random points on the screen
+    //create 50 circles of radius 20
+    //specify centre points randomly through the map function
+    var radius = 20;
+    var circle_data = d3.range(50).map(function() {
+        return{
+            x : Math.round(Math.random() * (width - radius*2 ) + radius),
+            y : Math.round(Math.random() * (height - radius*2 ) + radius)
+        };
+    });
+
+    //stylish black rectangle for sexy looks
+    var rect = svg.append("g")
+            .attr("class", "rect")
+            .append("rect")
+            .attr("width", width)
+            .attr("height", height)
+            .style("fill", "#22384f")
+    ;
+
+    //funky yellow circles
+    var circles = d3.select("svg")
+            .append("g")
+            .attr("class", "circles")
+            .selectAll("circle")
+            .data(circle_data)
+            .enter()
+            .append("circle")
+            .attr("cx", function(d) {return(d.x)})
+            .attr("cy", function(d) {return(d.y)})
+            .attr("r", radius)
+            .attr("fill", "#c51112");
+
+    /*
+     * DRAG BEHAVIOUR
+     */
+
+    //create drag handler with d3.drag()
+    var drag_handler = d3.drag()
+            .on("start", drag_start)
+            .on("drag", drag_drag);
+
+    function drag_start(){
+        // get starting location of the drag
+        // used to offset the circle
+        start_x = +d3.event.x;
+        start_y = +d3.event.y;
+    }
+
+    function drag_drag(d) {
+        //Get the current scale of the circle
+        //case where we haven't scaled the circle yet
+        if (this.getAttribute("transform") === null)
+        {
+            current_scale = 1;
+        }
+        //case where we have transformed the circle
+        else {
+            current_scale_string = this.getAttribute("transform").split(' ')[1];
+            current_scale = +current_scale_string.substring(6,current_scale_string.length-1);
+        }
+        d3.select(this)
+                .attr("cx", d.x = start_x + ((d3.event.x - start_x) / current_scale) )
+                .attr("cy", d.y = start_y + ((d3.event.y - start_y) / current_scale));
+    }
+
+    //apply the drag_handler to our circles
+    drag_handler(circles);
+
+    /*
+     * ZOOM BEHAVIOUR
+     */
+
+    //create zoom handler
+    var zoom_handler = d3.zoom()
+            .on("zoom", zoom_actions);
+
+
+    //specify what to do when zoom event listener is triggered
+    function zoom_actions(){
+        circles.attr("transform", d3.event.transform);
+    }
+
+    //add zoom behaviour to the svg element backing our graph.
+    //same thing as svg.call(zoom_handler);
+    zoom_handler(svg);
+
+</script>
+
 </html>

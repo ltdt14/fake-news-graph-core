@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700');
+* {
+    margin: 0;
+    padding: 0;
+}
+div {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    font-family: 'Oswald', sans-serif;
+    font-size: 110%;
+    height: 100%;
+}
+
+.navbar {
+    background: #22384f;
+}
+
+.logos {
+    left:0;
+    height: 50px;
+}
+
+.sth {
+    height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 7px;
+}
+section {
+    position: relative;
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    background: #111;
+    color: grey;
+    padding: 3px;
+}
+
+@media (min-width: 768px) {
+    .row.equal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+ul {
+    list-style-position: inside;
+}
+
+.cont {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+.infopar {
+    padding-top: 30px;
+}
+
+.info h1 {
+}
+
+.info {
+    color: #22384f;
+    border-style: solid;
+    border-color: #22384f;
+    border-width: 5px;
+    height: 100%;
+}
+
+#push {
+    height:100px;
+}
+
+#section01 {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+.row{
+    margin: 0;
+}
+
+.demo a {
+    margin: 10px;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    color: #fff;
+    font : normal 400 20px/1 'Oswald', sans-serif;
+    letter-spacing: .1em;
+    text-decoration: none;
+    transition: opacity .3s;
+    text-align: center;
+}
+.demo a:hover {
+    opacity: .5;
+}
+
+
+
+#section01 a {
+    position: absolute;
+    padding-top: 60px;
+    color: #22384f;
+}
+#section01 a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    margin-left: -23px;
+    border: 2px solid #22384f;
+    box-sizing: border-box;
+}
+#section01 a span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin: -12px 0 0 -8px;
+    border-left: 2px solid #22384f;
+    border-bottom: 2px solid #22384f;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+
+}
+
+#section02 {
+    height: 100%;
+}
+
+#section02 a {
+    position: absolute;
+
+    padding-top: 60px;
+}
+#section02 a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    margin-left: -23px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+}
+#section02 a span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin: -4px 0 0 -8px;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    box-sizing: border-box;
+}
+
+/*
+====================D3====================
+*/
+.links line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.nodes circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+
+section svg {
+    position: absolute;
+    background: #22384f;
+    z-index:1;
+    width: 100%;
+    height: 100%;
+}
