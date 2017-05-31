@@ -8,3 +8,6 @@
 /app/public/css/
 /d3_playground/node_modules/
 /preview_page/node_modules/
+/temporary_production/.env
+/temporary_production/node_modules/
+/temporary_production/public/css/

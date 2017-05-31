@@ -42,6 +42,7 @@
     "html-webpack-plugin": "^2.26.0",
     "load-grunt-tasks": "^3.2.0",
     "react": "^15.4.2",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.4.2",
     "react-helmet": "^4.0.0",
     "react-redux": "^5.0.2",

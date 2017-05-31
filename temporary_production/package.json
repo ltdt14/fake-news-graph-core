@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start index.js --name preview.fakenewsgraph.de --watch"
+    "start": "pm2 start index.js --name prodution.fakenewsgraph.de --watch"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-cssmin": "^0.14.0",

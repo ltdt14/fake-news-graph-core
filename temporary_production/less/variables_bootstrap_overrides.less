@@ -14,20 +14,22 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         darken(#428bca, 6.5%); // #337ab7
+@brand-primary:         #23394F;//darken(#428bca, 6.5%); // #337ab7
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
-@design-color-one:      #586E84;
-@design-color-two:      #47596B;
-@design-color-three:    #9D5C63;
-@design-color-four:     #845862;
-@design-color-five:     #F4F4F9;
-
 @logo-color:            @gray-darker;
 
+
+//components
+//heading
+@heading-hr:            @gray-base;
+
+//icon
+@icon:                 @brand-primary;
+@icon-hover:           @gray-darker;
 
 //== Scaffolding
 //
@@ -35,9 +37,10 @@
 
 //** Background color for `<body>`.
 
-@body-bg:                 #586E84;
+@body-bg:                #fff;
 //** Global text color on `<body>`.
 @text-color:            @gray-darker;
+
 
 //** Global textual link color.
 @link-color:            @gray-darker;
@@ -59,12 +62,12 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          18px;
+@font-size-base:          16px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            33px; // ~36px
-@font-size-h2:            30px; // ~30px
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
 @font-size-h5:            @font-size-base;
@@ -464,12 +467,12 @@
 //##
 
 @pagination-color:                     @link-color;
-@pagination-bg:                        @design-color-one;
-@pagination-border:                    @gray-darker;
+@pagination-bg:                        #fff;
+@pagination-border:                    #ddd;
 
 @pagination-hover-color:               @link-hover-color;
-@pagination-hover-bg:                  @design-color-three;
-@pagination-hover-border:              @gray-darker;
+@pagination-hover-bg:                  @gray-lighter;
+@pagination-hover-border:              #ddd;
 
 @pagination-active-color:              #fff;
 @pagination-active-bg:                 @brand-primary;
