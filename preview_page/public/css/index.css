@@ -13,8 +13,23 @@ html, body {
     height: 100%;
 }
 
+section {
+    position: relative;
+    width: 100%;
+}
+
+/*
+=============NAVIGATION BAR================
+*/
 .navbar {
     background: #22384f;
+}
+
+.logo {
+    height: 95px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 4px;
 }
 
 .logos {
@@ -22,26 +37,13 @@ html, body {
     height: 50px;
 }
 
-.sth {
-    height: 80px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 7px;
-}
-section {
-    position: relative;
-    width: 100%;
-}
 
-footer {
-    width: 100%;
-    background: #111;
-    color: grey;
-    padding: 3px;
-}
 
+/*
+================SECTION 1==================
+*/
 @media (min-width: 768px) {
-    .row.equal {
+    .row.equal-length-fix {
         display: flex;
         flex-wrap: wrap;
     }
@@ -51,17 +53,8 @@ ul {
     list-style-position: inside;
 }
 
-.cont {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-}
-
 .infopar {
     padding-top: 30px;
-}
-
-.info h1 {
 }
 
 .info {
@@ -72,8 +65,12 @@ ul {
     height: 100%;
 }
 
+.row {
+    margin: 0;
+}
+
 #push {
-    height:100px;
+    height:126px;
 }
 
 #section01 {
@@ -82,30 +79,10 @@ ul {
     height: 100%;
 }
 
-.row{
-    margin: 0;
-}
-
-.demo a {
-    margin: 10px;
-    bottom: 0;
-    right: 0;
-    z-index: 3;
-    color: #fff;
-    font : normal 400 20px/1 'Oswald', sans-serif;
-    letter-spacing: .1em;
-    text-decoration: none;
-    transition: opacity .3s;
-    text-align: center;
-}
-.demo a:hover {
-    opacity: .5;
-}
-
-
-
 #section01 a {
     position: absolute;
+    bottom: 0;
+    right: 0;
     padding-top: 60px;
     color: #22384f;
 }
@@ -116,7 +93,7 @@ ul {
     width: 46px;
     height: 46px;
     margin-left: -23px;
-    border: 2px solid #22384f;
+    border: 5px solid #22384f;
     box-sizing: border-box;
 }
 #section01 a span::after {
@@ -132,29 +109,66 @@ ul {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     box-sizing: border-box;
-
 }
 
+
+
+/*
+===============BUTTON=================
+*/
+.btn-container {
+    position: absolute;
+    min-width: 46px;
+    width:150px;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    color: #fff;
+    font : normal 400 20px/1 'Oswald', sans-serif;
+}
+.side-margin {
+    margin: 23px;
+}
+
+.btn-container a {
+    transition: opacity .3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-container a:hover {
+    opacity: .5;
+}
+
+
+
+/*
+================SECTION 2 (EXAMPLE)==================
+*/
 #section02 {
     height: 100%;
 }
 
-#section02 a {
+#btn-top {
     position: absolute;
-
     padding-top: 60px;
+    color: #bbb;
+    left: 0;
+    bottom: 0;
 }
-#section02 a span {
+
+#btn-top span {
     position: absolute;
-    top: 0;
     left: 50%;
+    top: 0;
     width: 46px;
     height: 46px;
     margin-left: -23px;
-    border: 2px solid #fff;
+    border: 5px solid #bbb;
     box-sizing: border-box;
 }
-#section02 a span::after {
+
+#btn-top span::after {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -162,10 +176,42 @@ ul {
     width: 16px;
     height: 16px;
     margin: -4px 0 0 -8px;
-    border-left: 2px solid #fff;
-    border-top: 2px solid #fff;
+    border-left: 2px solid #bbb;
+    border-top: 2px solid #bbb;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+    box-sizing: border-box;
+}
+
+#btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 60px;
+    color: #bbb;
+}
+#btn-footer span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    margin-left: -23px;
+    border: 5px solid #bbb;
+    box-sizing: border-box;
+}
+#btn-footer span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin: -12px 0 0 -8px;
+    border-left: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
     box-sizing: border-box;
 }
 
@@ -189,4 +235,44 @@ section svg {
     z-index:1;
     width: 100%;
     height: 100%;
+}
+
+/*
+================CREDITS==================
+*/
+#pre-footer {
+    background: #111;
+    width: 100%;
+    color: #555;
+    padding-bottom: 13px;
+}
+
+.side-pad {
+    padding: 23px;
+}
+
+.one-row {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.one-row a {
+    color: #555;
+    text-decoration: none;
+}
+
+.contact-cell {
+    padding-left: 15px;
+}
+
+#rights-and-credits {
+    width: 100%;
+    background: black;
+    color: #444;
+    overflow: auto;
+}
+
+#rights-and-credits a {
+    color: #22384F;
 }

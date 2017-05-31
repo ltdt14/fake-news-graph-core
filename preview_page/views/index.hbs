@@ -29,11 +29,11 @@
     <div class="cont">
         <div>
             <div class="navbar navbar-static-top">
-                <img class="pull-left sth img-responsive" src="res/FakeNewsGraphLogo4.png">
+                <img class="pull-left logo img-responsive" src="res/FakeNewsGraphLogo4.png">
             </div>
 
-            <div class="row equal">
-                <div class="infopar col-lg-4  col-md-4 col-sm-6 col-xs-12">
+            <div class="row equal-length-fix">
+                <div class="infopar col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="info col-lg-12">
                         <h1> <img class="logos" src="res/insight1.png"> What is FakeNewsGraph </h1>
                         <p>We would record the spreading of the news and would analyse this data to extract information about:
@@ -45,10 +45,11 @@
 
                     </div>
                 </div>
-                <div class="infopar col-lg-4 = col-md-4 col-sm-6 col-xs-12">
+
+                <div class="infopar col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="info col-lg-12">
                         <h1> <img class="logos" src="res/plan-idea1.png"> Approach </h1>
-                        <p>Our first goal is to implement this system for Twitter as it is the most easily accessible social network. Then if our concept prooves successful, we would expand it for facebook. </p>
+                        <p>Our first goal is to implement this system for Twitter as it is the most easily accessible social network. Then if our concept prooves successful, we would expand it for Facebook. </p>
 
                         <p>Due to the limitations of the Twitter REST API we had to use the Steaming API to access the data. Our approach consists of the following 3 steps:
                         <ul>
@@ -59,7 +60,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="infopar col-lg-4 = col-md-4 col-sm-6 col-xs-12">
+
+                <div class="infopar col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="info col-lg-12">
                         <h1> <img class="logos" src="res/team1.png"> The Team </h1>
                         <p> We are highly motivated students from Technical University of Berlin and Freie Universität Berlin, teamed up to tackle this multi-disziplinary project. Each one of us has experteese in different area of the computer science and together we are determined to complete our goal - to implement this web plattform.
@@ -73,20 +75,74 @@
 
     </div>
 
-    <a id="asd" href="#section02"><span></span>Example</a>
-
+    <div class="btn-container">
+        <a class="side-margin" href="#section02"><span></span>Example</a>
+    </div>
 
 </section>
-<section id="section02" class="demo">
+<section id="section02">
     <svg id='foo'></svg>
-    <a id="btn_1" href="#section01"><span></span>Back to top</a>
+    <div class="btn-container">
+        <a id="btn-top" class="side-margin" href="#section01"><span></span>Top</a>
+        <a id="btn-footer" class="side-margin" href="#pre-footer"><span></span>Footer</a>
+    </div>
 </section>
 
 <footer>
-    <div id="rights">
-        &copy; All rights reserved 2017
+    <div id="pre-footer" class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad" id="footer-about">
+            <h1> About </h1>
+
+            <p> We are a group of students developing an web platform for analysis and visualisation of the fake news spreading through social networks. Our fist milestone is visualising the spread of fake news stories in Twitter.
+            </p>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad" id="footer-contact">
+            <h1> Contact us </h1>
+
+            <p>
+                Get in touch! We'd love to hear from you.
+            </p>
+
+            <div class='row'>
+                <div class='one-row side-pad col-lg-6 col-md-12 col-sm-12 col-xs-12'>
+                    <table>
+                        <tr>
+                            <td><img class="logos" src="res/letter.png"> </td>
+                            <td><div class="contact-cell"> kontakt@fakenewsgraph.de </div></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class='one-row side-pad col-lg-6 col-md-12 col-sm-12 col-xs-12'>
+                    <table>
+                        <tr>
+                            <td><a href="https://twitter.com/FakeNewsGraph"> <img class="logos" src="res/twitter.png"></a> </td>
+                            <td><div class="contact-cell"> <a href="https://twitter.com/FakeNewsGraph">FakeNewsGraph</a> </div></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+
+    <div id="rights-and-credits" class='row'>
+        <div class="side-pad col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad">&copy; All rights reserved 2017</div>
+
+        <div class="side-pad col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad">
+
+            Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> and <a href="http://www.flaticon.com/authors/graphicsbay" title="GraphicsBay">GraphicsBay</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+
+
+        </div>
+    </div>
+
 </footer>
 
 </body>
