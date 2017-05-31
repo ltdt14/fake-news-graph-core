@@ -94,7 +94,9 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad" id="footer-about">
             <h1> About </h1>
 
-            <p> We are a group of students developing an web platform for analysis and visualisation of the fake news spreading through social networks. Our fist milestone is visualising the spread of fake news stories in Twitter.
+            <p> We are a group of students developing an web platform for analysis and visualisation of the fake news
+                spreading through social networks. Our first milestone is visualising the spread of
+                fake news stories in Twitter.
             </p>
 
         </div>
@@ -133,7 +135,8 @@
 
 
     <div id="rights-and-credits" class='row'>
-        <div class="side-pad col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad">&copy; All rights reserved 2017</div>
+        <div class="side-pad col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad">&copy; All rights
+            reserved 2017</div>
 
         <div class="side-pad col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad">
 
@@ -231,24 +234,6 @@
 
     //apply the drag_handler to our circles
     drag_handler(circles);
-
-    /*
-     * ZOOM BEHAVIOUR
-     */
-
-    //create zoom handler
-    var zoom_handler = d3.zoom()
-            .on("zoom", zoom_actions);
-
-
-    //specify what to do when zoom event listener is triggered
-    function zoom_actions(){
-        circles.attr("transform", d3.event.transform);
-    }
-
-    //add zoom behaviour to the svg element backing our graph.
-    //same thing as svg.call(zoom_handler);
-    zoom_handler(svg);
 
 </script>
 
