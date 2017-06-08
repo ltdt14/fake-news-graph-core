@@ -58,17 +58,38 @@
             <h2>Über das Projekt</h2>
             <hr>
         </header>
+        <blockquote>
+            <p>“Pope Francis shocks world, endorses Donald Trump for president”</p>
+            <footer>960.000 Engagements</footer>
+
+        </blockquote>
+        <blockquote class="blockquote-reverse">
+            <p>"ISIS leader calls for American Muslim voters to support Hillary Clinton"</p>
+            <footer>840.000 Engagements</footer>
+        </blockquote>
+        <blockquote>
+            <p>“Hillary Clinton and her State department were actively arming Islamic jihadists, which includes
+                ISIS”</p>
+            <footer>760.000 Engagements</footer>
+        </blockquote>
         <header class="heading heading-h3">
             <h3>Ziel</h3>
             <hr>
         </header>
-        <p>Wir entwickeln ein Analysetool, das ermöglicht, die Netzwerke zu erkunden, die hinter der
-            Verbreitung von Fake News stehen. Wer sind die wichtigsten Akteure? Wie verbreitet sich eine Fake News? Wer
-            trägt am meisten zu der Verbreitung bei? Wer hat den größten Einfluss?
-            Wir haben uns bewusst für eine Open-Source-Entwicklung entschieden. Jeder soll die Möglichkeit haben, es
+        <p>Wir entwickeln ein <strong>Analysetool</strong>, das ermöglicht, die <strong>Netzwerke</strong> zu erkunden,
+            die hinter der
+            <strong>Verbreitung von Fake News</strong> stehen.</p>
+
+        <ul>
+            <li>Wer sind die wichtigsten Akteure?</li>
+            <li>Wie verbreitet sich eine Fake News?</li>
+            <li>Wer trägt am meisten zu der Verbreitung bei?</li>
+            <li>Wer hat den größten Einfluss?</li>
+        </ul>
+        <p>Wir haben uns bewusst für eine Open-Source-Entwicklung entschieden. Jeder soll die Möglichkeit haben, es
             kostenlos zu nutzen und für eigene Zwecke anzupassen.</p>
         <header class="heading heading-h3">
-            <h3>Vorteile</h3>
+            <h3>Features</h3>
             <hr>
         </header>
         <ul>
@@ -85,6 +106,73 @@
                 Open Source - pass es an deine Bedürfnisse an! Sammele Daten auf deinem eigenen Server!
             </li>
         </ul>
+        <header class="heading heading-h3">
+            <h3>Preview</h3>
+            <hr>
+        </header>
+        <p>Hier eine kleine Animation der Verbreitung einer Fake News.</p>
+        <div class="text-center">
+            <img id="graph-img" class="img-responsive" src="presentation_graph/step1.png">
+            <button class="btn btn-default" onclick="timer=setInterval(timerFunc,2000)">&#9658;</button>
+            <button class="btn btn-default" onclick="clearInterval(timer)">||</button>
+            <div class="range-slider">
+                <form>
+                    <div class="form-group">
+                        <input id="timestep" onchange="updateSlider()" style="width: 100%" type="range" name="timestep" min="0"
+                               max="34" value="0" step="1">
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+        <header class="heading">
+            <h4>Legende</h4>
+        </header>
+        <dl class="dl-horizontal">
+            <dt>
+                <svg width="30" height="30">
+                    <circle fill="#00008B" r="15" cx="15" cy="15"></circle>
+                </svg>
+            </dt>
+            <dd>First diffusion level</dd>
+            <dt>
+                <svg width="30" height="30">
+                    <circle fill="#2eb4ff" r="15" cx="15" cy="15"></circle>
+                </svg>
+            </dt>
+            <dd>
+                Second diffusion level
+            </dd>
+            <dt>
+                <svg width="30" height="30">
+                    <circle fill="#52ff7d" r="15" cx="15" cy="15"></circle>
+                </svg>
+            </dt>
+            <dd>
+                Third diffusion level
+            </dd>
+            <dt>
+                <svg width="30" height="30">
+                    <line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:2"></line>
+                </svg>
+            </dt>
+            <dd>
+                Following relation
+            </dd>
+            <dt>
+                <svg width="100" height="30">
+                    <circle fill="#00008B" r="5" cx="10" cy="15"></circle>
+                    <circle fill="#00008B" r="10" cx="30" cy="15"></circle>
+                    <circle fill="#00008B" r="15" cx="60" cy="15"></circle>
+                </svg>
+            </dt>
+            <dd>
+                Number of Followers
+
+            </dd>
+        </dl>
+
         <!--
         <heading class="heading heading-h3">
             <h3>Wer beeinflusst wen?</h3>
@@ -113,20 +201,34 @@
             <h3>Das Team</h3>
             <hr>
         </header>
-        <p>Wir sind Studenten der Technischen Universität und der Freien Universität Berlin.</p>
+        <p class="text-center">Wir sind Studenten der Technischen Universität und der Freien Universität Berlin.</p>
+        <address class="text-center">
+            <strong>Kontakt</strong><br>
+            <a href="mailto:kontakt@fakenewsgraph.de">kontakt@fakenewsgraph.de</a>
+        </address>
         <img class="img-responsive" src="img/team.png">
     </section>
 </div>
 
 
-<footer>
+<footer class="page-footer">
     <p>&copy; 2017 fakenewsgraph.de</p>
 </footer>
-
-</body>
-
 <script type="text/javascript" src="js/script.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-100357242-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+</body>
 
 
 </html>

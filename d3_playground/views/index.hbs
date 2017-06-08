@@ -20,7 +20,90 @@
 
 </head>
 <body>
+    <script>
+        var timer;
+        var updateSlider=function(){
+            slider = document.getElementById("timestep")
+            step = parseInt(slider.value)
+            img = document.getElementById("graph-img")
+            img.src="/presentation_graph/step"+step+".png";
+            img.reload();
+        }
+        var timerFunc=function(){
+            slider = document.getElementById("timestep");
+            img = document.getElementById("graph-img");
+            step = parseInt(slider.value)
+            console.info(step);
+            if(step<34)
+            {
+                slider.value = step+1;
+                img.src="/presentation_graph/step"+(step+1)+".png"
+                img.reload();
+            }
+            else
+                clearInterval(timer)
+        }
+    </script>
+
     <h1>D3 Playground</h1>
-<script src="js/script.js"></script>
+    <div>
+        <div style="float:left">
+            <img id="graph-img" width="800px" height="600px" src="presentation_graph/step1.png"></img><br>
+            <button onclick="timer=setInterval(timerFunc,2000)">&#9658;</button>
+            <button onclick="clearInterval(timer)">||</button>
+            <input id="timestep" onchange="updateSlider()" style="width:600px" type="range" name="timestep" min="0" max="34" value="0" step="1"/>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Legend</th>
+                </tr>
+                <tr>
+                    <td>
+                        <svg width="30" height="30"><circle fill="#00008B" r="15" cx="15" cy="15"></svg>
+                    </td>
+                    <td>
+                        First diffusion level
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <svg width="30" height="30"><circle fill="#2eb4ff" r="15" cx="15" cy="15"></svg>
+                    </td>
+                    <td>
+                        Second diffusion level
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <svg width="30" height="30"><circle fill="#52ff7d" r="15" cx="15" cy="15"></svg>
+                    </td>
+                    <td>
+                        Third diffusion level
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <svg width="30" height="30"><line x1="0" y1="15" x2="30" y2="15" style="stroke:rgb(0,0,0);stroke-width:2"/></svg>
+                    </td>
+                    <td>
+                        Following relation
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <svg width="100" height="30">
+                            <circle fill="#00008B" r="5" cx="10" cy="15" />
+                            <circle fill="#00008B" r="10" cx="30" cy="15" />
+                            <circle fill="#00008B" r="15" cx="60" cy="15" />
+                        </svg>
+                    </td>
+                    <td>
+                        Amount of Follower
+                    </td>
+                </tr>
+            </table>
+        </div style:"float:right">
+    </div>
 </body>
 </html>
