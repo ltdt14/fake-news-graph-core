@@ -11,3 +11,4 @@
 /temporary_production/.env
 /temporary_production/node_modules/
 /temporary_production/public/css/
+/fakenewsgraph/node_modules/

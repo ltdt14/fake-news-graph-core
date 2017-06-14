@@ -1,29 +1,12 @@
-# Fake News Graph React App
+# Fake News Graph Preview Page
 
-## Install
+## How to deploy on server
+- Connect to 165.227.143.222
+- Copy files to ~/d3.fakenewsgraph.de/
+
+## Get Running 
 - run `npm install`
-
-## Development
-### Stylesheet
-- run `grunt watch` to activate less filewatcher
-- run `grunt less` to compile less files
-
-### React
-- run `webpack --watch` to activate app filewatcher
-- run `webpack` to build the app
-
-### Server
-- run `npm start` to start the server in development mode
-
-## Production
-Run in this order
-
-### Stylesheet
-- run `grunt production`
-
-### React
-- run `webpack`
-
-### Server
-- run `npm run build`
-- run `npm run start-production`
+- to compile less files run `grunt less`
+- to enable less filewatcher run `grunt watch`
+- to start server run `npm start`
+- Server runs on port 3200
