@@ -1,7 +1,16 @@
-# Example of Twitter API and AWS Kinesis Firehose on NodeJS
+# Example of Twitter API and AWS Kinesis Firehose script for Data Streaming 	
+
+
+
+
 
 Example of Twitter streaming and Kinesis Firehose to store the data on a S3 bucket on AWS.
-It is streaming #ifood hashtag tweets from Twitter.
+It will access our Google Spreadsheet with keywords/and hashtags, retrive user id's and set stream
+
+
+
+Instalation guide :
+
 
 1.  npm install
 2.  configure your Twitter keys on 'index.js' (first create an App on twitter console, then generate these keys)
