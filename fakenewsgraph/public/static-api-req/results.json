@@ -1,3 +1,22 @@
 {
-  "name": "hallo"
+  "results": [
+    {
+      "id": "01",
+      "title": "Some Title",
+      "type": "Tweet",
+      "fakeState": "fake"
+    },
+    {
+      "id": "01",
+      "title": "Some Title 2",
+      "type": "Article",
+      "fakeState": "pending"
+    },
+    {
+      "id": "01",
+      "title": "Some Title 3",
+      "type": "Article",
+      "fakeState": "no fake"
+    }
+  ]
 }
