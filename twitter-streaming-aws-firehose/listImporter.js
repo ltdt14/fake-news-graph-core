@@ -1,9 +1,11 @@
 var sheetrock = require('sheetrock');
 var _ = require('lodash');
-var Twit = require('twit')
+var Twit = require('twit');
 
-var sheets = {hashtags: "https://docs.google.com/spreadsheets/d/134BBsj9gFKYv8strppLG1_Ttox1v_FGLNO0NsRdXJ6Q/edit#gid=762605217",
-              politiker: "https://docs.google.com/spreadsheets/d/134BBsj9gFKYv8strppLG1_Ttox1v_FGLNO0NsRdXJ6Q/edit#gid=907447002"}
+var sheets = {
+    hashtags: "https://docs.google.com/spreadsheets/d/134BBsj9gFKYv8strppLG1_Ttox1v_FGLNO0NsRdXJ6Q/edit#gid=762605217",
+    politiker: "https://docs.google.com/spreadsheets/d/134BBsj9gFKYv8strppLG1_Ttox1v_FGLNO0NsRdXJ6Q/edit#gid=907447002"
+};
 
 var T = new Twit({
 
@@ -81,7 +83,7 @@ module.exports.getPolitiker = function(callback){
         callback: function(error, options, response){
             list = '';
             arr = [];
-            var ctn = response.row.length;
+            var ctn = response.rows.length;
             response.rows.forEach(function (val, index) {
                 if(index == 0) {
                     itemType = val.cellsArray[0];
@@ -98,28 +100,27 @@ module.exports.getPolitiker = function(callback){
 
             });
 
-            list.slice(0,list.length-1);
             if(ctn>100){
-                var tmp =  _.take(arr, 100);
-                list = _.drop(arr, 100);
-
-                T.get('users/lookup', { screen_name: tmp }, function(err, data, response) {
-                    console.log(data)
-
-                });
-
-
+                let parts = sliceIn100(arr,ctn);
+                let bigUserList = getAllResults(parts);
+                bigUserList.then(response => {
+                    callback(response);
+                })
 
             }else{
+                list.slice(0,list.length-1);
+
                 T.get('users/lookup', { screen_name: list }, function(err, data, response) {
-                    console.log(data)
+                    //console.log(data);
+                    var tmp= _.filter(data, function(o) { return o.id; });
+
+                    callback(tmp);
 
                 });
             }
 
 
 
-            callback(list);
         },
 
     });
@@ -128,6 +129,49 @@ module.exports.getPolitiker = function(callback){
 };
 
 
+
+
+function getAllResults(arr) { // returns a promise for 250 results
+    var totalResults = [];
+    var iter=0;
+    var stringOfNames = arr[iter].toString();
+    var prom = T.get('users/lookup', { screen_name: stringOfNames });
+    iter++;
+    for (var i = 1; i <= arr.length-1; i++) { // chain four more times
+        prom = prom.then(results => {
+                //console.log(resuX^lts.data);
+                let ctr=i;
+
+                var tmp =_.map(results.data, function(n) {
+                    return n.id;
+                });
+                totalResults = totalResults.concat(tmp);
+
+                stringOfNames = arr[ctr-1].toString();
+               // iter++;
+                return T.get('users/lookup', { screen_name: stringOfNames });
+    });
+    }
+    return prom.then( results => {
+                    var tmp= _.map(results.data,'id');
+                    totalResults=totalResults.concat(tmp)
+                    return totalResults;
+    } );
+}
+
+function sliceIn100(arr,ctn) {
+    var partsAmmount = Math.ceil((ctn / 100));
+
+    var tmp;
+    var result = new Array;
+
+    for(i=0; i<partsAmmount;i++){
+        tmp =  _.take(arr, 100);
+        arr =_.drop(arr, 100);
+        result.push(tmp);
+    }
+    return result;
+}
 
 
 /**

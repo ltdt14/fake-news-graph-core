@@ -5,6 +5,12 @@
 
 var importer = require("./listImporter.js");
 
-importer.getHashtags( function( data ) {
+/*importer.getHashtags( function( data ) {
+    console.log(data);
+});*/
+
+importer.getPolitiker( function( data ) {
     console.log(data);
 });
+
+
