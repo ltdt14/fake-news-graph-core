@@ -3,6 +3,7 @@
 //import and load .env file
 require('dotenv').load();
 
+
 //load modules
 const path = require('path');
 const handlebars = require('express-handlebars');
@@ -21,7 +22,13 @@ const hbs = handlebars.create({
 });
 
 //use handlebars with config above
-app.engine('.hbs', hbs.engine);
+app.engine( 'hbs', handlebars( {
+    extname: 'hbs',
+    defaultLayout: 'main',
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: __dirname + '/views/partials/'
+} ) );
+
 app.set('view engine', '.hbs');
 
 app.use(express.static('public'));
