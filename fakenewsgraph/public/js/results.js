@@ -1,5 +1,7 @@
 $(document).ready(function () {
+    console.log("here 1");
     $.get('static-api-req/results.json', function (res) {
+        console.log("here 2");
         if (res.results) {
             res.results.forEach(function (result) {
                 $('#tablebody').append(
