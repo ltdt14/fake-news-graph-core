@@ -1,0 +1,37 @@
+#header1 {
+  width: 100%;
+  height: auto;
+  background: @blue-dark;
+  color: @white;
+  display: table;
+  border-radius: 0 !important;
+
+
+  #nav-logo-container {
+    background: orange;
+    float: left;
+    img {
+      height: 80px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    ul {
+      background: blue;
+      height: 130px;
+      display: table;
+    }
+
+    li {
+      height: 130px;
+      display: table-cell;
+
+      a {
+        height: 100%;
+        background: yellowgreen;
+        vertical-align: bottom;
+        display: block }
+    }
+  }
+}
+
