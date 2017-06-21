@@ -3,12 +3,8 @@
   height: auto;
   background: @blue-dark;
   color: @white;
-  display: table;
-  border-radius: 0 !important;
-
 
   #nav-logo-container {
-    background: orange;
     float: left;
     img {
       height: 80px;
@@ -17,20 +13,22 @@
 
   @media (min-width: 768px) {
     ul {
-      background: blue;
       height: 130px;
-      display: table;
+      display: table-row;
     }
 
     li {
-      height: 130px;
       display: table-cell;
-
+      margin-bottom: 0;
+      vertical-align: middle;
       a {
-        height: 100%;
-        background: yellowgreen;
-        vertical-align: bottom;
-        display: block }
+        color: @white;
+        height: 130px;
+        vertical-align: middle;
+        display:table-cell;
+        padding-right: @navbar-button-padding;
+        padding-left: @navbar-button-padding;
+      }
     }
   }
 }

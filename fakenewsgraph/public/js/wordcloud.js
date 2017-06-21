@@ -6,7 +6,7 @@ $(document).ready(function () {
         if (res) {
             var svg = d3.select("svg");
 
-            var positionInfo = document.getElementById('foo').getBoundingClientRect();
+            var positionInfo = document.getElementById("wordcloud").getBoundingClientRect();
             console.log(height);
 
             var height = positionInfo.height;
@@ -26,13 +26,11 @@ $(document).ready(function () {
                 .on("end", draw)
                 .start();
 
-
-
-            function randomColor(d, i) {
-
-
-            }
             function draw(words) {
+                var reddark = "#c51111";
+                var bluedark = "#21384e";
+                var bluelight = "#1256e1";
+
                 d3.select("svg")
                     .attr("width", width)
                     .attr("height", height)
@@ -47,11 +45,11 @@ $(document).ready(function () {
                     .style("fill", function(d, i) {
                         x = Math.random();
                         if (x < 0.33) {
-                            return "#22384f";
+                            return bluedark;
                         } else if (x < 0.66) {
-                            return "red";
+                            return reddark;
                         } else {
-                            return "blue";
+                            return bluelight;
                         }
                     })
                     .attr("text-anchor", "middle")
@@ -66,7 +64,12 @@ $(document).ready(function () {
 
 
         }
+
+        var gbox = document.getElementsByTagName("g")[0].getBoundingClientRect();
+        console.log("G-dimensions: " + gbox.width + "x" + gbox.height);
+        $("#wordcloud").height(gbox.height);
+        $("#wordcloud").width(gbox.width);
+
+        $("g").attr('transform', 'translate(' + gbox.width / 2 + ',' + gbox.height / 2 + ')');
     });
-
-
 });

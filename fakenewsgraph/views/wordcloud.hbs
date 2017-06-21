@@ -1,11 +1,10 @@
-<!--The progress bar with the instructions-->
-<div class="side-pad" id="progress-bar">
-    <div> Something</div>
 
-</div>
+{{>progress-bar}}
 
 <!--The word cloud svg-->
-<svg id='foo'></svg>
+<div id="wordcloud-container">
+    <svg id='wordcloud'></svg>
+</div>
 
 <!--Word cloud imports-->
 <script src="js/d3.v3.min.js" charset="utf-8"></script>
@@ -17,3 +16,12 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
 <script src="js/wordcloud.js"></script>
+
+<!--Set the values of the progress bar-->
+<script>
+    $(document).ready(function () {
+        $('#step-1').addClass("current-step");
+        $('#progress-tips').text("Type in search terms in the serach bar above or pick one from the " +
+                "word cloud below");
+    });
+</script>
