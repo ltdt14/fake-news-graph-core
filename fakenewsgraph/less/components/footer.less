@@ -2,10 +2,15 @@
 ================FOOTER==================
 */
 #pre-footer {
-  background: #111;
+  background: @about-background;
   width: 100%;
-  color: #555;
+  color: @about-text-color;
   padding-bottom: 13px;
+
+  .logos {
+    left:0;
+    height: 50px;
+  }
 }
 
 .row {
@@ -20,7 +25,7 @@
 }
 
 .one-row a {
-  color: #555;
+  color: @about-text-color;
   text-decoration: none;
 }
 
@@ -30,15 +35,10 @@
 
 #rights-and-credits {
   width: 100%;
-  background: black;
-  color: #444;
+  background: @credits-background;
+  color: @credits-text-color;
 }
 
 #rights-and-credits a {
-  color: #22384F;
-}
-
-.logos {
-  left:0;
-  height: 50px;
+  color: @credits-link-color;
 }
