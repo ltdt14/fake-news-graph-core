@@ -8578,6 +8578,10 @@ body {
   color: #555;
   padding-bottom: 13px;
 }
+#pre-footer .logos {
+  left: 0;
+  height: 50px;
+}
 .row {
   margin: 0;
   padding: 0;
@@ -8602,23 +8606,21 @@ body {
 #rights-and-credits a {
   color: #22384F;
 }
-.logos {
-  left: 0;
-  height: 50px;
-}
 .clickable-row {
   cursor: pointer;
 }
 #wordcloud-container {
-  background: purple;
   width: 100%;
+  text-align: center;
 }
 svg {
   font-size: 110%;
   width: 100%;
-  height: 1000px;
+  height: 800px;
   overflow: auto;
-  background: magenta;
+}
+svg g text {
+  cursor: pointer;
 }
 #progress-bar {
   width: 100%;

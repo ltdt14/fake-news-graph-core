@@ -1,19 +1,13 @@
 $(document).ready(function () {
 
     $.get('static-api-req/wordcloud.json', function (res) {
-        console.log(res);
-
         if (res) {
             var svg = d3.select("svg");
 
             var positionInfo = document.getElementById("wordcloud").getBoundingClientRect();
-            console.log(height);
 
             var height = positionInfo.height;
             var width = positionInfo.width;
-
-            console.log(height);
-            console.log(width);
 
             var fill = d3.scale.category20();
 
@@ -35,7 +29,6 @@ $(document).ready(function () {
                     .attr("width", width)
                     .attr("height", height)
                     .append("g")
-                    .attr("transform", "translate(" + width / 2 + ", " + height / 2 + ")")
                     .style("fill", "#22384f")
                     .selectAll("text")
                     .data(words)
@@ -58,18 +51,19 @@ $(document).ready(function () {
                     })
                     .text(function(d) { return d.text; })
                     .on("click", function(d) {
-                        alert(d.text);
+                        window.location.href = "/keyword-results?tag=" + d.text;
                     });
             }
-
-
         }
 
         var gbox = document.getElementsByTagName("g")[0].getBoundingClientRect();
-        console.log("G-dimensions: " + gbox.width + "x" + gbox.height);
+
         $("#wordcloud").height(gbox.height);
         $("#wordcloud").width(gbox.width);
 
-        $("g").attr('transform', 'translate(' + gbox.width / 2 + ',' + gbox.height / 2 + ')');
+        var offset_left = (- $("g").position().left) + $("#wordcloud").position().left;
+        var offset_top = (- $("g").position().top) + $("#wordcloud").position().top;
+        d3.select("g").attr('transform', 'translate(' + offset_left + ' ' +
+            offset_top + ')');
     });
 });
