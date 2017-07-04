@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "id": "01",
+      "title": "Some Title",
+      "thumbnail": "http://cdn1.spiegel.de/images/image-2954-640_panofree-lyup-2954.jpg",
+      "source": "spiegel.de",
+      "retweets": 100,
+      "date": "10.02.2017",
+      "type": "Tweet",
+      "fakeState": "fake"
+    },
+    {
+      "id": "02",
+      "title": "Some Title 2",
+      "thumbnail": "https://www.welt.de/img/politik/deutschland/mobile157881375/1082509207-ci102l-w1024/Angela-Merkel-2.jpg",
+      "date": "30.04.2017",
+      "type": "Article",
+      "fakeState": "pending"
+    },
+    {
+      "id": "03",
+      "title": "Some Title 3Some Title 3Some Title 3Some Title 3Some Title 3Some Title 3Some Title 3Some Title 3",
+      "thumbnail": "https://www.bundeskanzlerin.de/Webs/BKin/DE/AngelaMerkel/Biografie/bundeskanzlerin_angela_merkel.jpg?__blob=poster&v=5",
+      "date": "20.04.2017",
+      "type": "Article",
+      "fakeState": "no fake"
+    },
+    {
+      "id": "04",
+      "title": "Some Title 4",
+      "thumbnail": "https://www.thenation.com/wp-content/uploads/2015/05/drone_afghanistan_ap_img_2.jpg",
+      "date": "30.04.2017",
+      "type": "Article",
+      "fakeState": "pending"
+    }
+  ]
+}

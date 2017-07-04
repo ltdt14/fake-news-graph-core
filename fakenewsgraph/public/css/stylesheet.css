@@ -8609,6 +8609,29 @@ body {
 .clickable-row {
   cursor: pointer;
 }
+.clickable-article {
+  cursor: pointer;
+  background: green;
+  margin: 0;
+  padding: 0;
+}
+.clickable-article .article-info {
+  padding: 5px 15px;
+}
+.clickable-article table {
+  width: 100%;
+  background: purple;
+}
+.thumbnail-container {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+.article-thumbnail {
+  height: auto;
+  width: 100%;
+}
 #wordcloud-container {
   width: 100%;
   text-align: center;
