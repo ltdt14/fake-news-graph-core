@@ -8610,25 +8610,41 @@ body {
   cursor: pointer;
 }
 .clickable-article {
-  cursor: pointer;
-  background: green;
+  position: relative;
+  background: #c8ced3;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
-.clickable-article .article-info {
-  padding: 5px 15px;
+.clickable-article a {
+  color: #21384e;
 }
 .clickable-article table {
   width: 100%;
-  background: purple;
+}
+@media (min-width: 750px) {
+  .equal-length-fix {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.article-info {
+  width: 100%;
+  position: absolute;
+  background: #c8ced3;
+  bottom: 0;
+  padding: 5px 15px 5px 15px;
 }
 .thumbnail-container {
-  height: 200px;
+  position: relative;
+  height: 400px;
   width: 100%;
   overflow: hidden;
   margin: 0;
 }
 .article-thumbnail {
+  position: absolute;
+  top: 0;
   height: auto;
   width: 100%;
 }

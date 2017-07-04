@@ -6,9 +6,7 @@
       "thumbnail": "http://cdn1.spiegel.de/images/image-2954-640_panofree-lyup-2954.jpg",
       "source": "http://www.bild.de/ratgeber/psychologie/psychologie/leidet-trump-unter-einer-zwangsstoerung-51075492.bild.html",
       "retweets": 100,
-      "date": "10.02.2017",
-      "type": "Tweet",
-      "fakeState": "fake"
+      "date": "10.02.2017"
     },
     {
       "id": "02",
@@ -16,9 +14,7 @@
       "thumbnail": "https://www.welt.de/img/politik/deutschland/mobile157881375/1082509207-ci102l-w1024/Angela-Merkel-2.jpg",
       "source": "http://www.spiegel.de/politik/ausland/donald-trump-und-nordkorea-den-usa-gehen-die-optionen-aus-a-1155905.html",
       "retweets": 221,
-      "date": "30.04.2017",
-      "type": "Article",
-      "fakeState": "pending"
+      "date": "30.04.2017"
     },
     {
       "id": "03",
@@ -26,9 +22,7 @@
       "thumbnail": "https://www.bundeskanzlerin.de/Webs/BKin/DE/AngelaMerkel/Biografie/bundeskanzlerin_angela_merkel.jpg?__blob=poster&v=5",
       "source": "http://edition.cnn.com/2017/05/29/politics/merkel-trump-europe/index.html",
       "retweets": 5000,
-      "date": "20.04.2017",
-      "type": "Article",
-      "fakeState": "no fake"
+      "date": "20.04.2017"
     },
     {
       "id": "04",
@@ -36,9 +30,7 @@
       "thumbnail": "https://www.thenation.com/wp-content/uploads/2015/05/drone_afghanistan_ap_img_2.jpg",
       "source": "https://www.reuters.com/article/us-usa-trump-drones-idUSKBN19D03G",
       "retweets": 230,
-      "date": "30.04.2017",
-      "type": "Article",
-      "fakeState": "pending"
+      "date": "30.04.2017"
     }
   ]
 }
