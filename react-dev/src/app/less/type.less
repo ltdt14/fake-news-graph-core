@@ -1,0 +1,48 @@
+p{
+  letter-spacing: 0.4px;
+  line-height: 23px;
+}
+
+h2, h3{
+  text-transform: uppercase;
+}
+
+h2{
+  letter-spacing: 3px;
+}
+
+h3{
+  letter-spacing: 1px;
+
+  &.h3-sub{
+    font-size: ceil((@font-size-base * 1.5));
+  }
+}
+
+li{
+  margin-bottom: 10px;
+}
+
+dt{
+  @include clearfix;
+}
+
+.dl-horizontal dt{
+  padding: 0 30px 0 0;
+  width: 50%;
+}
+
+dd{
+  padding: 3px 0 4px 30px;
+  width: 50%;
+
+
+}
+
+a{
+  &:hover{
+    color: @brand-primary;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

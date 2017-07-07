@@ -1,0 +1,39 @@
+#header1 {
+  width: 100%;
+  height: auto;
+  background: @blue-dark;
+  color: @white;
+
+  #nav-logo-container {
+    float: left;
+    img {
+      height: 80px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    ul {
+      height: 130px;
+      display: table-row;
+    }
+
+    li {
+      display: table-cell;
+      margin-bottom: 0;
+      vertical-align: middle;
+      a {
+        color: @white;
+        height: 130px;
+        vertical-align: middle;
+        display:table-cell;
+        padding-right: @navbar-button-padding;
+        padding-left: @navbar-button-padding;
+      }
+    }
+  }
+
+  .header-link{
+    text-transform: uppercase;
+  }
+}
+
