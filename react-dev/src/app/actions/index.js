@@ -1,7 +1,8 @@
 import axios from "axios";
 import {
     SET_BREADCRUMB_STATE,
-    FETCH_KEYWORDS
+    FETCH_KEYWORDS,
+    FETCH_KEYWORD_RESULTS
 } from './types';
 
 export function fetchKeywords() {
@@ -13,7 +14,17 @@ export function fetchKeywords() {
     };
 }
 
+export function fetchKeywordResults() {
+    let request = axios.get("/static-api-req/results.json");
+
+    return {
+        type: FETCH_KEYWORD_RESULTS,
+        payload: request
+    };
+}
+
 export function setBreadcrumbState(step){
+
     let tip;
     switch(step){
         case 1:
@@ -34,6 +45,7 @@ export function setBreadcrumbState(step){
         progressStep: step,
         progressTip: tip
     }
+
 }
 
 

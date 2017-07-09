@@ -40,6 +40,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-hashres": "^0.4.1",
     "html-webpack-plugin": "^2.26.0",
+    "humps": "^2.0.1",
     "load-grunt-tasks": "^3.2.0",
     "react": "^15.4.2",
     "react-collapsible": "^1.4.0",
@@ -56,6 +57,7 @@
     "redux-promise": "^0.5.3",
     "rimraf": "^2.5.4",
     "styled-components": "^2.0.1",
+    "superagent": "^3.5.2",
     "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.0"

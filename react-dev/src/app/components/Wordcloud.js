@@ -5,15 +5,20 @@ import {setBreadcrumbState} from "../actions/index";
 
 class Wordcloud extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
+        if(typeof window !== 'undefined') {
 
-        const script = document.createElement("script");
+            const script = document.createElement("script");
 
-        script.src = "js/wordcloud.js";
-        script.async = true;
+            script.src = "js/wordcloud.js";
+            script.async = true;
 
-        document.body.appendChild(script);
-        this.props.setBreadcrumbState(2);
+            document.body.appendChild(script);
+        }
+
+        this.props.setBreadcrumbState(1);
+
+
     }
 
     render() {
@@ -22,7 +27,6 @@ class Wordcloud extends Component {
                 <div className="side-pad" id="wordcloud-container">
                     <svg id='wordcloud'/>
                 </div>
-                <button onClick={() => this.props.setBreadcrumbState(3)}>Next Step</button>
             </div>
         )
     }

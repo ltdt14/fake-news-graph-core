@@ -6,6 +6,7 @@ const router = express.Router();
 const clientAppApi = require('./api/clientApp');
 
 router.get("/", clientAppApi.reactRouterHandle);
+router.get('/results', clientAppApi.reactRouterHandle)
 router.get("/impressum", clientAppApi.reactRouterHandle);
 router.get("/sdfsaf", clientAppApi.reactRouterHandle);
 /*

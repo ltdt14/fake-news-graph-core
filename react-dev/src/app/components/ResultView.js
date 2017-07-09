@@ -2,20 +2,20 @@ import React, {Component} from "react";
 
 import Header from './Header';
 import Breadcrumb from '../container/Breadcrumb';
-import Wordcloud from './Wordcloud';
+import Results from './Results';
 import Footer from './Footer';
 
-class Home extends Component {
+class ResultView extends Component {
     render() {
         return (
             <div>
                 <Header/>
                 <Breadcrumb/>
-                <Wordcloud/>
+                <Results/>
                 <Footer/>
             </div>
         );
     }
 }
 
-export default Home;
+export default ResultView;
