@@ -1,6 +1,8 @@
-import {FETCH_GALLERYPICS} from "../actions/index";
+import {} from "../actions/index";
 
-const INITIAL_STATE = {galleryPics: []};
+import FETCH_KEYWORDS from '../actions/types';
+
+const INITIAL_STATE = {keywords: []};
 
 export default function (state, action) {
 
@@ -9,10 +11,10 @@ export default function (state, action) {
     }
 
     switch (action.type) {
-        case FETCH_GALLERYPICS:
+        case FETCH_KEYWORDS:
             return {
                 ...state,
-                all: action.payload.data.results,
+                all: action.request,
             };
         default:
             return state;

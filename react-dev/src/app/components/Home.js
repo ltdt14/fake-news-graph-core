@@ -3,6 +3,7 @@ import {Link} from "react-router";
 import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor';
 
 import Header from './Header';
+import Breadcrumb from '../container/Breadcrumb';
 import Wordcloud from './Wordcloud';
 import Footer from './Footer';
 
@@ -17,6 +18,7 @@ class Home extends Component {
         return (
             <div>
                 <Header/>
+                <Breadcrumb/>
                 <Wordcloud/>
 
                 <Footer/>

@@ -1,3 +1,2 @@
-export const SEND_EMAIL = 'SEND_EMAIL';
-export const CREATE_ERROR = 'CREATE_ERROR';
-export const CLEAR_ERROR = 'CLEAR_ERROR';
+export const SET_BREADCRUMB_STATE = 'SET_BREADCRUMB_STATE';
+export const FETCH_KEYWORDS = 'FETCH_KEYWORDS';

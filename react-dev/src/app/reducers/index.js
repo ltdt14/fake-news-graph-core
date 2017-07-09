@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
-import GalleryPicsReducer from "./reducer_gallerypics";
-import SendEmailReducer from "./reducer_sendEmail";
-import { reducer as formReducer } from 'redux-form';
+import BreadcrumbReducer from "./reducer_breadcrumb";
+import KeywordReducer from "./reducer_keywords";
 
 const rootReducer = combineReducers({
-    galleryPics: GalleryPicsReducer,
-    sendEmail: SendEmailReducer,
-    form: formReducer
+    setBreadcrumbState: BreadcrumbReducer,
+    fetchKeywords: KeywordReducer,
 });
 
 
