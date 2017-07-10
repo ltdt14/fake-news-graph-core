@@ -21,6 +21,7 @@ class Breadcrumb extends Component {
                 elem.className = 'side-pad col-lg-4 col-md-4 col-sm-4 col-xs-6 progress-step';
             });
 
+            console.log('set progress step css');
             //add class to curr elem
             let currElem = document.getElementById('step-' + this.props.progressStep);
             currElem?currElem.className += ' current-step':null;

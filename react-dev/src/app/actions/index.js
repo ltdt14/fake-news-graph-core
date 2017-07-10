@@ -6,7 +6,7 @@ import {
 } from './types';
 
 export function fetchKeywords() {
-    let request = axios.get("http://localhost:3800/static-api-req/wordcloud.json");
+    let request = axios.get("static-api-req/wordcloud.json");
 
     return {
         type: FETCH_KEYWORDS,
@@ -15,7 +15,7 @@ export function fetchKeywords() {
 }
 
 export function fetchKeywordResults() {
-    let request = axios.get("http://localhost:3800/static-api-req/results.json");
+    let request = axios.get("/static-api-req/results.json");
 
     return {
         type: FETCH_KEYWORD_RESULTS,
