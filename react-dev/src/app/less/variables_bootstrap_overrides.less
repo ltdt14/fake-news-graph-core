@@ -14,7 +14,9 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #23394F;//darken(#428bca, 6.5%); // #337ab7
+@brand-primary:         #c51111;
+@brand-secondary:       #1256e1;
+@brand-thirdly:         #21384e;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -22,14 +24,11 @@
 
 @logo-color:            @gray-darker;
 
-
+//todo component variables can go here
 //components
-//heading
-@heading-hr:            @gray-base;
+//footer
+@icon-link-font-size: ceil(@font-size-base * 2);
 
-//icon
-@icon:                 @brand-primary;
-@icon-hover:           @gray-darker;
 
 //== Scaffolding
 //
@@ -62,6 +61,7 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
+//todo font-sizes should be declared and defined here
 @font-size-base:          18px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px

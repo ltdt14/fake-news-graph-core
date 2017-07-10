@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 import Header from './Header';
 import Breadcrumb from '../container/Breadcrumb';
-import Results from './Results';
+import Results from '../container/Results';
 import Footer from './Footer';
 
 class ResultView extends Component {

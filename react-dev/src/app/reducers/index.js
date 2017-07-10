@@ -4,9 +4,9 @@ import KeywordReducer from "./reducer_keywords";
 import KeywordResultReducer from './reducer_keyword_results';
 
 const rootReducer = combineReducers({
-    setBreadcrumbState: BreadcrumbReducer,
-    fetchKeywords: KeywordReducer,
-    fetchKeywordResults: KeywordResultReducer
+    breadcrumb: BreadcrumbReducer,
+    keywords: KeywordReducer,
+    keywordResults: KeywordResultReducer
 });
 
 

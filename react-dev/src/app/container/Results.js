@@ -5,6 +5,10 @@ import {fetchKeywordResults, setBreadcrumbState} from "../actions/index";
 import {Link, browserHistory} from "react-router";
 
 class Results extends Component {
+    static needs = [
+        setBreadcrumbState,
+        fetchKeywordResults
+    ];
 
     componentWillMount() {
         this.props.setBreadcrumbState(2);
@@ -46,7 +50,7 @@ function mapStateToProps(state) {
     console.log('curr state in component:', state);
 
     return {
-        results: state.fetchKeywordResults.results,
+        results: state.keywordResults.results,
     };
 
 };

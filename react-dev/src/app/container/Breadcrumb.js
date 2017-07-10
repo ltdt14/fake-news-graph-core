@@ -87,8 +87,8 @@ function mapStateToProps(state) {
     console.log('curr state in component:', state);
 
     return {
-        progressStep: state.setBreadcrumbState.progressStep,
-        progressTip: state.setBreadcrumbState.progressTip
+        progressStep: state.breadcrumb.progressStep,
+        progressTip: state.breadcrumb.progressTip
     };
 
 };

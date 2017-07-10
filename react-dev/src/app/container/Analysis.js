@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 import {setBreadcrumbState} from "../actions/index";
 
 class Analysis extends Component {
+    static needs = [
+        setBreadcrumbState
+    ];
 
     componentWillMount() {
         this.props.setBreadcrumbState(3);

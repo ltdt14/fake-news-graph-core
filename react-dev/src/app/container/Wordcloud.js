@@ -4,6 +4,9 @@ import {connect} from 'react-redux';
 import {setBreadcrumbState} from "../actions/index";
 
 class Wordcloud extends Component {
+    static needs = [
+        setBreadcrumbState,
+    ];
 
     componentDidMount() {
         if(typeof window !== 'undefined') {
