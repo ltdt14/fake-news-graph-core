@@ -8,7 +8,7 @@ class Wordcloud extends Component {
         setBreadcrumbState,
     ];
 
-    componentDidMount() {
+    componentWillMount() {
         if(typeof window !== 'undefined') {
 
             const script = document.createElement("script");

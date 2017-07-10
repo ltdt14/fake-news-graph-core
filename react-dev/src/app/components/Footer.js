@@ -32,7 +32,7 @@ class Footer extends Component {
                 <div className="row" id="pre-footer">
 
                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad" id="footer-about">
-                        <h1> About </h1>
+                        <h2> About </h2>
 
                         <p> We are a group of students developing an web platform for analysis and visualisation of the fake news spreading through social networks. Our fist milestone is visualising the spread of fake news stories in Twitter.
                         </p>
@@ -40,7 +40,7 @@ class Footer extends Component {
                     </div>
 
                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad" id="footer-contact">
-                        <h1> Contact us </h1>
+                        <h2> Contact us </h2>
 
                         <p>
                             Get in touch! We'd love to hear from you.
@@ -68,8 +68,7 @@ class Footer extends Component {
 
 
                 <div className='row' id="rights-and-credits">
-                    <div className="side-pad col-lg-6 col-md-6 col-sm-6 col-xs-12 side-pad">&copy; fakenewsgraph.de 2017</div>
-
+                   &copy; fakenewsgraph.de 2017
                 </div>
             </footer>
         )

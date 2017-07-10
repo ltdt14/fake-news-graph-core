@@ -13,3 +13,18 @@
     font-size: @icon-link-font-size;
   }
 }
+
+.link-with-hover(@color; @hover-color){
+  color: @color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @hover-color;
+    text-decoration: @link-hover-decoration;
+  }
+
+  &:focus {
+    .tab-focus();
+  }
+}

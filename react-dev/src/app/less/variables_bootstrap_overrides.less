@@ -26,8 +26,23 @@
 
 //todo component variables can go here
 //components
-//footer
+//mixins
 @icon-link-font-size: ceil(@font-size-base * 2);
+
+//header
+@header-link-size:        22px;
+@header-color:            @text-color-on-dark;
+
+
+// Footer
+@about-background:        @brand-thirdly;//#111;
+@about-text-color:        @text-color-on-dark;//#555;
+@credits-background:      @gray-darker;
+@credits-text-color:      @text-color-on-dark;//#444;
+@credits-link-color:      #22384F;
+
+
+
 
 
 //== Scaffolding
@@ -39,12 +54,13 @@
 @body-bg:                #fff;
 //** Global text color on `<body>`.
 @text-color:            @gray-darker;
+@text-color-on-dark:    #ddd;
 
 
 //** Global textual link color.
 @link-color:            @gray-darker;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      @brand-primary;
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -66,9 +82,9 @@
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.3)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2)); // ~30px
-@font-size-h3:            ceil((@font-size-base * 1.5)); // ~24px
+@font-size-h1:            floor((@font-size-base * 2)); // ~36px
+@font-size-h2:            floor((@font-size-base * 1.66)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.4)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
 @font-size-h5:            @font-size-base;
 @font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px

@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   background: @blue-dark;
-  color: @white;
+  color: @header-color;
 
   #nav-logo-container {
     float: left;
@@ -22,7 +22,8 @@
       margin-bottom: 0;
       vertical-align: middle;
       a {
-        color: @white;
+        font-size: @header-link-size;
+        .link-with-hover(@header-color, @link-hover-color);
         height: 130px;
         vertical-align: middle;
         display:table-cell;

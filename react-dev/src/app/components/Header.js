@@ -27,10 +27,9 @@ class Header extends Component {
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                             <ul className="nav navbar-nav navbar-right side-pad-sides">
-                                <li><Link to="/" className="header-link" href="/">home</Link></li>
-                                <li><Link to="/">HELP</Link></li>
-                                <li><Link to="/">ABOUT</Link></li>
-                                <li><Link to="/">CONTACT</Link></li>
+                                <li><Link to="/" className="header-link" href="/">Analyse</Link></li>
+                                <li><Link to="/about" className="header-link">About</Link></li>
+                                <li><Link to="/contact" className="header-link">Contact</Link></li>
                                 <li><Link className="header-link" to={"/impressum"}>Impressum</Link></li>
                             </ul>
                         </div>
