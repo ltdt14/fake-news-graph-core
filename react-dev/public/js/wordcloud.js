@@ -51,7 +51,7 @@ $(document).ready(function () {
                     })
                     .text(function(d) { return d.text; })
                     .on("click", function(d) {
-                        window.location.href = "/keyword-results?tag=" + d.text;
+                        window.location.href = "/results?tag=" + d.text;
                     });
             }
         }

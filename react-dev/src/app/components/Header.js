@@ -20,17 +20,17 @@ class Header extends Component {
                                 <span className="icon-bar"></span>
                             </button>
                             <div className="side-pad" id="nav-logo-container">
-                                <a href="/"><img src="img/logo.png"/></a>
+                                <Link to="/" href="/"><img src="img/logo.png"/></Link>
                             </div>
                         </div>
 
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                             <ul className="nav navbar-nav navbar-right side-pad-sides">
-                                <li><a className="header-link" href="/">home</a></li>
-                                <li><a href="#">HELP</a></li>
-                                <li><a href="#">ABOUT</a></li>
-                                <li><a href="#">CONTACT</a></li>
+                                <li><Link to="/" className="header-link" href="/">home</Link></li>
+                                <li><Link to="/">HELP</Link></li>
+                                <li><Link to="/">ABOUT</Link></li>
+                                <li><Link to="/">CONTACT</Link></li>
                                 <li><Link className="header-link" to={"/impressum"}>Impressum</Link></li>
                             </ul>
                         </div>

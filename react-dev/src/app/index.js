@@ -15,19 +15,7 @@ const createStoreWithMiddleware = applyMiddleware(
     promise
 )(createStore);
 
-//const reducer = combineReducers(reducers);
-//const store   = createStore(reducer, initialState);
 const store = createStoreWithMiddleware(reducers, initialState);
-//const store = createStoreWithMiddleware(reducers);
-
-
-/*
- ReactDOM.render(
- <Provider store={createStoreWithMiddleware(reducers)}>
- <Router history={browserHistory} routes={routes}/>
- </Provider>
- , document.querySelector('.container'));
- */
 
 ReactDOM.render(
     <Provider store={store}>

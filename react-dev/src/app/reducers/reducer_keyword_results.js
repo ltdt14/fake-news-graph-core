@@ -1,8 +1,8 @@
 import {} from "../actions/index";
 
-import FETCH_KEYWORD_RESULTS from '../actions/types';
+import {FETCH_KEYWORD_RESULTS} from '../actions/types';
 
-const INITIAL_STATE = {results: ['hello']};
+const INITIAL_STATE = {results: []};
 
 export default function (state, action) {
 
@@ -10,13 +10,10 @@ export default function (state, action) {
         return INITIAL_STATE
     }
 
-    console.log('keyword results:', action.type, action.payload)
-
     switch (action.type) {
         case FETCH_KEYWORD_RESULTS:
-            console.log('updating state')
+            console.log('updating state', action.payload.data.results);
             return {
-                ...state,
                 results: action.payload.data.results
             };
         default:
