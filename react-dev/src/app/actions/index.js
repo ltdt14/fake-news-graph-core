@@ -2,7 +2,8 @@ import axios from "axios";
 import {
     SET_BREADCRUMB_STATE,
     FETCH_KEYWORDS,
-    FETCH_KEYWORD_RESULTS
+    FETCH_KEYWORD_RESULTS,
+    FETCH_KEYWORD_ARTICLES
 } from './types';
 
 export function fetchKeywords() {
@@ -19,6 +20,15 @@ export function fetchKeywordResults() {
 
     return {
         type: FETCH_KEYWORD_RESULTS,
+        payload: request
+    };
+}
+
+export function fetchKeywordArticles() {
+    let request = axios.get("/static-api-req/articles.json");
+
+    return {
+        type: FETCH_KEYWORD_ARTICLES,
         payload: request
     };
 }
