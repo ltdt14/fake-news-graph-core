@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 
 import Header from '../Header';
 import Breadcrumb from '../../container/Breadcrumb';
@@ -9,10 +9,10 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Header/>
-                <Breadcrumb/>
-                <Wordcloud/>
-                <Footer/>
+                <Header />
+                <Breadcrumb />
+                <Wordcloud />
+                <Footer />
             </div>
         );
     }

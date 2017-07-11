@@ -1,11 +1,8 @@
-import React, {Component} from 'react'
-import {ThemeProvider} from 'styled-components'
-import {themeVariables} from '../themeVariables'
-
+import React, { Component } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { themeVariables } from '../themeVariables';
 
 export default class App extends Component {
-
-
     render() {
         return (
             <div>
@@ -13,6 +10,6 @@ export default class App extends Component {
                     {this.props.children}
                 </ThemeProvider>
             </div>
-        )
+        );
     }
 }

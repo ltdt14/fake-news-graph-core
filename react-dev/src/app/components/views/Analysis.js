@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 
 import Header from '../Header';
 import Breadcrumb from '../../container/Breadcrumb';
@@ -9,10 +9,10 @@ class AnalysisView extends Component {
     render() {
         return (
             <div>
-                <Header/>
-                <Breadcrumb/>
-                <Analysis/>
-                <Footer/>
+                <Header />
+                <Breadcrumb />
+                <Analysis />
+                <Footer />
             </div>
         );
     }

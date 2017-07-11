@@ -18,6 +18,4 @@ class Analysis extends Component {
     }
 }
 
-
-
 export default connect(null, { setBreadcrumbState })(Analysis);

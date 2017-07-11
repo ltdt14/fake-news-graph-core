@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { setBreadcrumbState } from '../actions/index';
 
 class Breadcrumb extends Component {
-    static needs(){
-        return [setBreadcrumbState]
+    static needs() {
+        return [setBreadcrumbState];
     }
 
     render() {
