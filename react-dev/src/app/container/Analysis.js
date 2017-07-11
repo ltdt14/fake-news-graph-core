@@ -1,11 +1,9 @@
-import React, {Component} from "react";
-import {connect} from 'react-redux';
-import {setBreadcrumbState} from "../actions/index";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { setBreadcrumbState } from '../actions/index';
 
 class Analysis extends Component {
-    static needs = [
-        setBreadcrumbState
-    ];
+    static needs = [setBreadcrumbState];
 
     componentWillMount() {
         this.props.setBreadcrumbState(3);
@@ -16,9 +14,10 @@ class Analysis extends Component {
             <div>
                 <h1>Analysis</h1>
             </div>
-        )
+        );
     }
 }
 
-export default connect(null, {setBreadcrumbState})(Analysis);
 
+
+export default connect(null, { setBreadcrumbState })(Analysis);
