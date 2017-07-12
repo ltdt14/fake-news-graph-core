@@ -1,100 +1,97 @@
-# Fake News Graph Frontend
+# fakenewsgraph.de - frontend
 
-This is the Frontend of the fakenewsgraph.de webservice.
+This is the frontend of the fakenewsgraph.de webservice.
 
 ## Installing / Getting started
 
-### Development
-- run `grunt less` (or `grunt watch`) to compile less files
-- run `npm start` to run express server with webpack dev and hot middleware
-
-### Production
-Imporant: Use this queue
-- run `webpack -p` to compile frontend app
-- run `grunt production` compiles less files and overrides link tag to css file with hash in index.hbs in build dir
-- run `npm run build` transpiles app and express server with babel
-- run `npm run start-production`
+- run `git clone https://github.com/ltodt/fake-news-graph-core.git`
+- run `cd react-dev`
+- run `npm i` or `yarn install`
+- run `npm start`
 
 ## Developing
 
 ### Built With
-NodeJS / Express / React / Redux / Less
+React / Redux / Less / NodeJS / Express
 
 ### Prerequisites
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
+- Node JS / NPM
+- PM2 in production mode
 
 
-### Setting up Dev
-
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
-
-```shell
-git clone https://github.com/your/your-project.git
-cd your-project/
-packagemanager install
-```
-
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
 
 ### Building
 
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
+#### Development
+##### Styling:
 
-```shell
-./configure
-make
-make install
-```
+- `grunt less` compiles less files
+- `grunt watch` watches the less files and compiles them after every change
 
-Here again you should state what actually happens when the code above gets
-executed.
+##### React and Express App
+If you started the server with `npm start` it’s running with webpack dev and hot middleware so changes on react or server files should retranspile the files automatically. You can manually start (restart) the server by running
 
-### Deploying / Publishing
-give instructions on how to build and release a new version
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
+`npm run start-with-babel-node`
 
-```shell
-packagemanager deploy your-project -s server.com -u username -p password
-```
+#### Production
+To run the app in prodcution mode you need to run
 
-And again you'd need to tell what the previous code actually does.
+`npm run start-production`
+
+**OR**
+
+##### 1. transpile the app with webpack for production mode by running
+
+`webpack -p`
+
+##### 2. Compile the less files, minificate the stylesheet, give it a hash and override the `<link href="styleseeht.css`> by running
+
+`grunt production`
+
+##### 3. Transpile the server files (including the react app for server side rendering) by running
+
+`npm run build`
+
+##### 4. Start the the server by running
+
+`npm run start-production-server`
+
+This uses PM2 process manager. You can also start the server with node or any other tool, just set the NODE_ENV to production and use the entry point `dist/server/index.js`
 
 ## Versioning
 
-We can maybe use [SemVer](http://semver.org/) for versioning. For the versions available, see the [link to tags on this repository](/tags).
+0.0.1
 
 
 ## Configuration
 
-Here you should write what are all of the configurations a user can enter when
-using the project.
+### 1.
+You can add a .env file to the root. The server reads following variables:
 
-## Tests
+```
+//Port in production
+PORT=3000
 
-Describe and show how to run the tests with code examples.
-Explain what these tests test and why.
+//Port in development
+DEV_PORT=3100
 
-```shell
-Give an example
+//Turn on or off basic auth in development
+BASIC_AUTH=true //or false
+
+//Name for basic auth
+BASIC_AUTH_NAME=MyName
+
+//Password for basic auth
+BASIC_AUTH_PASSWORD=password
 ```
 
-## Style guide
+### 2.
+You can change the root url to the backend in src/app/config.js
 
-Explain your code style and show how to check it.
-
-## Api Reference
-
-If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
-
-
-## Database
-
-Explaining what database (and version) has been used. Provide download links.
-Documents your database design and schemas, relations etc... 
+```
+export const backendUrl = 'http://…'
+```
 
 ## Licensing
 
-State what the license is and how to find the text version of the license.
+
