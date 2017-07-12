@@ -1,9 +1,8 @@
 'use strict';
 
-//import and load .env file
-require('dotenv').load();
-
 //load modules
+const dotenv = require('dotenv')
+const fs = require('fs');
 const path = require('path');
 const basicAuth = require('basic-auth');
 const handlebars = require('express-handlebars');
@@ -15,6 +14,11 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const compression = require('compression');
 
+//load env vars if .env exists
+if(fs.existsSync(path.join(__dirname, '../../.env'))){
+    dotenv.load();
+}
+
 //port and views depending on Node Env
 let port;
 if (process.env.NODE_ENV === 'production') {
@@ -23,6 +27,34 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     app.set('views', path.join(__dirname, './views'));
     port = process.env.DEV_PORT || 3000;
+}
+
+if (process.env.BASIC_AUTH && process.env.BASIC_AUTH === 'true') {
+    //basic auth
+    app.use(function(req, res, next) {
+        function unauthorized(res) {
+            res.set(
+                'WWW-Authenticate',
+                'Basic realm=Authorization Required'
+            );
+            return res.send(401);
+        }
+
+        let user = basicAuth(req);
+
+        if (!user || !user.name || !user.pass) {
+            return unauthorized(res);
+        }
+
+        if (
+            user.name === process.env.BASIC_AUTH_NAME &&
+            user.pass === process.env.BASIC_AUTH_PASSWORD
+        ) {
+            return next();
+        } else {
+            return unauthorized(res);
+        }
+    });
 }
 
 //handlebars config
@@ -36,29 +68,6 @@ app.set('view engine', '.hbs');
 
 //public files
 app.use(express.static(path.join(__dirname, '../../public')));
-
-//basic auth
-app.use(function(req, res, next) {
-    function unauthorized(res) {
-        res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
-        return res.send(401);
-    }
-
-    let user = basicAuth(req);
-
-    if (!user || !user.name || !user.pass) {
-        return unauthorized(res);
-    }
-
-    if (
-        user.name === process.env.BASIC_AUTH_NAME &&
-        user.pass === process.env.BASIC_AUTH_PASSWORD
-    ) {
-        return next();
-    } else {
-        return unauthorized(res);
-    }
-});
 
 //webpack dev server and hot middleware
 if (process.env.NODE_ENV !== 'production') {
