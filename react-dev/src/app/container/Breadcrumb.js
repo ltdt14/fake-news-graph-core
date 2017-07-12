@@ -11,15 +11,19 @@ class Breadcrumb extends Component {
     render() {
         //prevent dom manipulation when rendering serverside
         if (typeof window !== 'undefined') {
+            // Removed this code because it causes bug on tablet devices
+            // (3rd step should take the whole row, but with this it took only half of the row)
+            /*
             //clean the class names of all elems
             let otherElems = document.getElementsByClassName('progress-step');
             console.log(otherElems);
+
 
             [].forEach.call(otherElems, function(elem) {
                 elem.className =
                     'side-pad col-lg-4 col-md-4 col-sm-4 col-xs-6 progress-step';
             });
-
+            */
             console.log('set progress step css');
             //add class to curr elem
             let currElem = document.getElementById(

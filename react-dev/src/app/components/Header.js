@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import styled from 'styled-components';
 
 class Header extends Component {
+
     render() {
         return (
             <div id="header1">
