@@ -13,3 +13,7 @@
 /temporary_production/public/css/
 /fakenewsgraph/node_modules/
 /react-dev/node_modules/
+/react-dev/public/build/
+/react-dev/public/css/
+/react-dev/dist/
+/react-dev/.env
