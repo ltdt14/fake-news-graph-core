@@ -1,21 +1,59 @@
-#header1 {
+.container {
   width: 100%;
   height: auto;
-  background: @blue-dark;
-  color: @header-color;
+  /*
+  padding: 0;*/
 
-  #nav-logo-container {
-    float: left;
-    img {
-      height: 80px;
-    }
+  #logo-link {
+    height: 130px;
+    margin: 0;
   }
+  #navbar-logo {
+    height: 80px;
+  }
+}
 
-  @media (min-width: 768px) {
-    ul {
-      height: 130px;
-      display: table-row;
-    }
+.navbar-brand {
+  padding: @logo-padding;
+}
+
+#burger-btn {
+  border: 2px solid @header-color;
+  border-radius: 5px;
+  vertical-align: center;
+  height: 80px;
+  margin: @logo-padding @logo-padding @logo-padding 0;
+  width: 60px;
+
+
+  .icon-bar {
+    background: @header-color;
+    height: @burger-menu-bar-size;
+    width: 38px;
+  }
+}
+
+#burger-btn:hover  {
+   border: 2px solid white;
+   background: none;
+
+   .icon-bar {
+     background: white;
+   }
+}
+
+#burger-btn:focus {
+  background: none;
+}
+
+#menu-items {
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  #menu-items {
+    height: 130px;
+    display: table-row;
 
     li {
       display: table-cell;
@@ -23,7 +61,7 @@
       vertical-align: middle;
       a {
         font-size: @header-link-size;
-        .link-with-hover(@header-color, @link-hover-color);
+        .link-with-hover(@header-color, white);
         height: 130px;
         vertical-align: middle;
         display:table-cell;
@@ -32,13 +70,38 @@
       }
     }
   }
+}
 
-  .header-link{
-    text-transform: uppercase;
+@media (max-width: 768px) {
+  #menu-items-container {
+    border: none;
   }
 
-  .navbar-toggle {
-    margin: 0;
+  #menu-items {
+
+    li {
+      a {
+        font-size: @header-link-size;
+        .link-with-hover(@header-color, white);
+        padding-left: @logo-padding;
+        padding-right: @logo-padding;
+      }
+    }
   }
 }
 
+/* FIX - fit logo and burger-menu on one row even on smart phones*/
+@media (max-width: 433px) {
+  .navbar-brand {
+    padding: @logo-padding-fix @logo-padding @logo-padding-fix @logo-padding;
+  }
+
+  #navbar-logo {
+    height: 60px !important;
+  }
+
+  #burger-btn {
+    height: 60px !important;
+    margin: @logo-padding-fix @logo-padding @logo-padding-fix 0;
+  }
+}
