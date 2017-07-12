@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Header from '../Header';
-import Navbar1 from '../Navbar1';
 import Breadcrumb from '../../container/Breadcrumb';
 import Results from '../../container/Results';
 import ArticleSelection from '../../container/ArticleSelection';
@@ -11,7 +10,7 @@ class ResultView extends Component {
     render() {
         return (
             <div>
-                <Navbar1 />
+                <Header />
                 <Breadcrumb />
                 <ArticleSelection />
                 <Footer />

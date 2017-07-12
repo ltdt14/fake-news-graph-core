@@ -80,7 +80,7 @@ class ArticleSelection extends Component {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td> Source:
+                                    <td>Source: &nbsp;
                                         <Link to={`/analysis?id=${result.source}`}>
                                             {domain}
                                         </Link>

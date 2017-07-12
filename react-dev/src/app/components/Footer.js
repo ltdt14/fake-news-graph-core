@@ -46,15 +46,15 @@ class Footer extends Component {
 
                         <p>Get in touch! We'd love to hear from you.</p>
 
-                        <div className="row">
-                            <div className="one-row side-pad col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div className="row" id="contact-items">
+                            <div className="one-row col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                 <div className="contact-email">
                                     <a href="mailto:kontakt@fakenewsgraph.de">
                                         kontakt@fakenewsgraph.de
                                     </a>
                                 </div>
                             </div>
-                            <div className="one-row side-pad col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                            <div className="one-row col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                 <div className="contact-twitter">
                                     <a
                                         href="https://twitter.com/FakeNewsGraph"

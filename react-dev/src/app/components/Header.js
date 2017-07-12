@@ -1,70 +1,40 @@
+
 import React, { Component } from 'react';
+import {Navbar, Nav, NavItem} from 'react-bootstrap';
 import { Link } from 'react-router';
 
 import styled from 'styled-components';
 
-class Header extends Component {
-
+class Navbar1 extends Component {
     render() {
         return (
-            <div id="header1">
-                <nav className="navbar navbar-default">
-                    <div className="container-fluid">
-                        <div className="navbar-header">
-                            <button
-                                type="button"
-                                className="navbar-toggle collapsed"
-                                data-toggle="collapse"
-                                data-target="#bs-example-navbar-collapse-1"
-                                aria-expanded="false">
-                                <span className="sr-only">
-                                    Toggle navigation
-                                </span>
-                                <span className="icon-bar" />
-                                <span className="icon-bar" />
-                                <span className="icon-bar" />
-                            </button>
-                            <div className="side-pad" id="nav-logo-container">
-                                <Link to="/" href="/">
-                                    <img src="img/logo.png" />
-                                </Link>
-                            </div>
-                        </div>
+            <Navbar inverse collapseOnSelect>
+                <Navbar.Header>
+                    <Navbar.Brand>
+                        <Link to="/" href="/" id="logo-link">
+                            <img id="navbar-logo" src="img/logo.png" />
+                        </Link>
+                    </Navbar.Brand>
+                    <Navbar.Toggle id="burger-btn"/>
+                </Navbar.Header>
 
-                        <div
-                            className="collapse navbar-collapse"
-                            id="bs-example-navbar-collapse-1">
-                            <ul className="nav navbar-nav navbar-right side-pad-sides">
-                                <li>
-                                    <Link
-                                        to="/"
-                                        className="header-link"
-                                        href="/">
-                                        Analyse
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/about" className="header-link">
-                                        About
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/contact" className="header-link">
-                                        Contact
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        className="header-link"
-                                        to={'/impressum'}>
-                                        Impressum
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+                <Navbar.Collapse id="menu-items-container">
+                    <Nav pullRight id="menu-items">
+                        <NavItem key={1} href="/" onClick={e => this.props.history.push("/")}>
+                            Analyse
+                        </NavItem>
+                        <NavItem key={2} href="/about" onClick={e => this.props.history.push("/about")}>
+                            About
+                        </NavItem>
+                        <NavItem key={3} href="/contact" onClick={e => this.props.history.push("/contact")}>
+                            Contact
+                        </NavItem>
+                        <NavItem key={4} href="/impressum"  onClick={e => this.props.history.push("/impressum")}>
+                            Impressum
+                        </NavItem>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         );
     }
 }
